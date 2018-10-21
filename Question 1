@@ -15,4 +15,4 @@ for line in fhand:
         water_levels.append(tuple(("Max water level: " + words[2], "Date: " + words[0], "Time: " + words[1]))) 
         #Adds to the list the water level value, the date, and the time in the form of a tuple
         
-print(max(water_levels[1:])) #Prints the maximum water level. We slice the list since 0 is a tuple of header words
+print(max(water_levels[1:])) #Prints the maximum water level. We slice the list since 0 is a tuple of header words.
