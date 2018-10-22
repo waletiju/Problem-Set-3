@@ -25,4 +25,4 @@ for i, j in enumerate(water_levels[0:]):
         max_diff = water_levels[i] - water_levels[i-1]
         x = str(water_levels[i])
 
-print("Fastest rise in water level:", max_diff, "Date and time:", date_time[x])
+print("Fastest rise in water level:", round(max_diff, 3), "Date and time:", date_time[x])
