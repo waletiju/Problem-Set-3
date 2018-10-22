@@ -1,0 +1,10 @@
+
+#!/usr/bin/env python3
+
+import pandas as pd
+
+df_water = pd.read_csv('/ufrc/zoo6927/share/Class_Files/data/CO-OPS__8729108__wl.csv') #opens file and converts it to a table
+
+#grab the row that has the maximum water level and display the columns Date and Time, and Water Level
+
+print(df_water.loc[df_water[' Water Level'].idxmax()]) #prints max water value, date, and time
