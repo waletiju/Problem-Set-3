@@ -1,0 +1,26 @@
+
+#!/usr/bin/env python3
+#problem 3 FINISHED
+#This scrpit assumes you already have the python3 module loaded
+
+water_levels = list() #Creates an empty list
+date_time = dict() #Creates an empty dictionary 
+fhand = open('/ufrc/zoo6927/share/Class_Files/data/CO-OPS__8729108__wl.csv') #opens data file 
+    
+for line in fhand: #searches data file line by line
+    line = line.replace(',', ' ') #Replaces the commas from each line with a white space
+    words = line.split() #splits line into seperate words
+    if words[2] == 'Water': #This is to get rid of the header row
+        continue
+    else:
+        water_levels.append(float(words[2])) #adds water level value to my water_levels list
+        if words[0] not in date_time: #creates dictionary with water level as the key and date/time as string value
+            date_time[words[2]] = str(words[0]) + str(' ') + str(words[1]) 
+            
+max_diff = 0 #setting our initial max difference in water level equal to 0
+for i, j in enumerate(water_levels[0:]): #assigns an integer value to the float values in my water_levels list
+    if water_levels[i] - water_levels[i-1] > max_diff and water_levels[i] - water_levels[i-1] < 5: #finds max difference
+        max_diff = water_levels[i] - water_levels[i-1] #sets max_diff variable to new value if it greater than the original
+        x = str(water_levels[i]) #converts current float value to string value equal to x in order to use in dictionary
+
+print("Fastest rise in water level:", round(max_diff, 3), "Date and time:", date_time[x]) #max difference in water level with data and time
