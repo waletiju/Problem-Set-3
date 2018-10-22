@@ -1,7 +1,7 @@
 
 #!/usr/bin/env python3
 
-#problem 3 almost finished but need to add date and time
+#problem 3 FINISHED
 
 #This scrpit assumes you already have the python3 module loaded
 
@@ -25,4 +25,4 @@ for i, j in enumerate(water_levels[0:]):
         max_diff = water_levels[i] - water_levels[i-1]
         x = str(water_levels[i])
 
-print(date_time[x], max_diff)
+print("Fastest rise in water level:", max_diff, "Date and time:", date_time[x])
