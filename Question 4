@@ -1,20 +1,23 @@
 
-%matplotlib inline #only include this if you are using jupyter
+%matplotlib inline 
 
-import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt #I used jupyter to answer this question
 import pandas as pd
 water_file = pd.read_csv('CO-OPS__8729108__wl.csv') #make sure to upload the data file to jupyter
 
-wl = water_file[' Water Level']
-time = water_file['Date Time']
+wl = water_file[' Water Level'] #grabs water level column from data file
+time = water_file['Date Time'] #grabs date and time column from data file
 
-fig = plt.figure()
 plt.plot(time, wl, '-')
+plt.xlabel("Time")
+plt.title("Water levels for Panama City, FL during Hurricane Michael")
+plt.ylabel("Water level")
+
 plt.tick_params(
     axis='x',          # changes apply to the x-axis
     which='both',      # both major and minor ticks are affected
     bottom=False,      # ticks along the bottom edge are off
     top=False,         # ticks along the top edge are off
     labelbottom=False)
-plt.axis([0, 750, 0, 7])
-plt.show()
+plt.axis([0, 750, 0, 7]) #sets the min/max values for x and y axis
+plt.show() 
